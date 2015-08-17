@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+public class AngryProfessor {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int T = scan.nextInt();
+        int N = 0;
+        int K = 0;
+        for(int t = 0;t<T;t++){
+        	
+            N = scan.nextInt();//students in class
+            K = scan.nextInt();//min number allowed to start class
+        	int[] array = new int[N];
+	        for(int i=0; i<N; i++){
+	            array[i] = scan.nextInt();
+	        }
+	        int start = 0;
+	        for(int i=0; i<N; i++){
+	        	if(array[i]<=0){
+	        		start++;
+	        	}
+	        }
+	        if(start>=K){
+	        	System.out.println("NO");
+	        }
+	        else{
+	        	System.out.println("YES");
+	        }
+	        
+	    }
+    }
+}
