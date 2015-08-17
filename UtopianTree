@@ -1,0 +1,51 @@
+
+	
+	import java.util.*;
+	
+	public class UtopianTreee {
+		private static Scanner scan;
+	    public static void main(String[] args) {
+	        scan = new Scanner(System.in);
+	        
+	        int x = scan.nextInt();
+	        int[] array = new int[x];
+	        int height = 1;
+	        int count = 0;
+	        int i =0;
+	        
+	        while(scan.hasNextInt()){
+	            array[i]=scan.nextInt();
+	            i++;
+	            if(i==x){
+	                break;
+	            }
+	        }
+	        
+	        
+	        for(int y = 0;y<=array.length-1;y++){
+	            count = 0;
+	            height = 1;
+	            
+	            while(count <array[y]){
+	                
+	             if(array[y]==0){
+	                break;
+	             }
+	             else if(count <=array[y]){
+	                height = height*2;
+	                count++;
+	                if(count==array[y]){
+	                    break;
+	                }
+	                height = height+1;
+	                count++;
+	             }
+	             
+	            }
+	            System.out.println(height);
+	        }
+	        
+	        
+	     }
+	}
+
