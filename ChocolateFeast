@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class ChocolateFeast {
+
+	public static void main(String[] args){
+		
+        Scanner in = new Scanner(System.in);
+        int t = in.nextInt();
+        for(int i = 0; i < t; i++){
+            System.out.println(Solve(in.nextInt(), in.nextInt(), in.nextInt()));
+        }
+    }
+    // N=Money he has  C=price of each chocolate  M=wrappers
+    private static long Solve(int money, int price, int wrappers){
+       long count = 0;
+       int w = 0;
+    	while(money>=price){
+        	money = money-price;
+        	count++;
+        	w++;
+        	
+        }
+    	while(w>=wrappers){
+    		w = w-wrappers;
+    		count++;
+    		w++;
+    	}
+       return count;
+    }
+    
+}
+
