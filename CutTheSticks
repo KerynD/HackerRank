@@ -1,0 +1,58 @@
+import java.util.Scanner;
+public class CutTheSticks {
+	
+
+	public static void main(String[] args){
+		Scanner scan = new Scanner(System.in);
+		
+		int x = scan.nextInt();
+        int[] array = new int[x];
+        int i = 0;
+        int count = x;
+        
+        while(scan.hasNextInt()){
+            array[i]=scan.nextInt();
+            i++;
+            if(i==x){
+                break;
+            }
+        }
+        int l= 0;
+        int shortest = 1000;
+        //System.out.println(count);
+        shortest = array[0];
+        while(l<x){
+        	//System.out.println(count);
+            count = 0;
+            shortest = 10000;
+         
+            //for(int j = 0;j<=array.length-1;j++){
+            	for(int y = 0;y<=array.length-1;y++){
+            		if(array[y]<=shortest && array[y]>0){
+        			shortest=array[y];
+            		}
+            	}
+            		System.out.println(shortest);
+        	    
+        	for(int j = 0;j<array.length;j++){
+        		 if(array[j]==0){
+         			l++;
+         			
+         		}
+                
+                if(array[j]>0){
+        		array[j]=array[j]-shortest;
+                    count++;
+                   System.out.print(array[j] + " ");
+                }
+                
+                //if(array[j]==0){
+        		//	l--;
+        			
+        		//}
+        	}
+            System.out.println(count);
+        }
+		//System.out.println(count);
+	}
+}
