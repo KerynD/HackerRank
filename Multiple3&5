@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+public class multiple3n5 {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int T = scan.nextInt();
+
+        for(int t = 0;t<T;t++){
+        	int k = scan.nextInt();
+        	int count = 0;
+        	int three = 0;
+        	int five = 0;
+        	for(int i=0; i<k;i++){
+        		if(i%3==0|i%5==0){
+        			count = count+i;
+        		}
+        		three = three+3;
+        		five = five+5;
+        	}
+	        System.out.println(count);
+	    }
+    }
+}
