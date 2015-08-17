@@ -1,0 +1,38 @@
+import java.util.Scanner;
+public class SherlockSquares {
+	
+	public static void main(String[] args){
+		
+        Scanner in = new Scanner(System.in);
+        int[] squares= new int[31650];
+        for(int i = 0; i<31625; i++){
+        	squares[i] = i*i;
+        }
+        
+        int t = in.nextInt();
+        for(int i = 0; i < t; i++){
+            System.out.println(Solve(in.nextInt(), in.nextInt(),squares));
+
+        }
+	}
+
+	private static int Solve(int x, int y, int[] array){
+		int count = 0;
+		int num = 0;
+		for(int j = num;j<array.length;j++){
+		for(int i = x;i<=y; i++){
+			
+				if(array[j] == i){
+					count++;
+					num = i;
+				}
+			}
+		}
+		return count;
+	}
+	
+}
+
+
+ 
+
